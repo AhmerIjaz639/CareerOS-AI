@@ -1,8 +1,8 @@
-# CareerOS AI 🎯
+# CareerOS AI 
 
 > **Multi-Agent Career Intelligence Platform** that provides evidence-based career guidance through objective AI analysis of your resume, GitHub profile, projects, and job market requirements.
 
-## 🚀 Overview
+##  Overview
 
 CareerOS AI revolutionizes career guidance by moving beyond subjective advice. Our intelligent multi-agent platform analyzes:
 
