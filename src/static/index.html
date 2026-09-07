@@ -21,7 +21,7 @@
   --green: #34d399;
   --amber: #fbbf24;
   --red: #f87171;
-  --blue: #60a5fa;
+  --blue: #38bdf8; /* Adjusted to match your team role colors */
   --radius: 14px;
 }
 
@@ -236,13 +236,53 @@ details pre {
 }
 .ghost-btn:hover { background: rgba(255, 122, 26, 0.1); }
 
-footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 48px; }
+/* ==========================================================================
+   Team Section (Newly Added)
+   ========================================================================== */
+.team-section { margin-top: 54px; }
+.team-title { font-size: 24px; font-weight: 700; margin-bottom: 24px; text-align: left; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.team-card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px 16px; text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.team-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+
+/* Abstract avatar circles */
+.avatar {
+  width: 80px; height: 80px; margin: 0 auto 16px;
+  border-radius: 50%; background: linear-gradient(135deg, var(--panel-2), #111520);
+  border: 1px solid var(--border); color: var(--muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 700; letter-spacing: 1px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+}
+
+.team-card h3 { font-size: 16px; color: var(--text); margin-bottom: 4px; }
+.team-card .role {
+  font-size: 11px; font-weight: 700; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px;
+}
+.team-card ul { list-style: none; text-align: left; padding: 0 8px; }
+.team-card li {
+  font-size: 12px; color: var(--muted); padding-left: 14px; position: relative; margin-bottom: 6px;
+}
+.team-card li::before { content: "•"; color: var(--blue); position: absolute; left: 0; top: -1px; }
+
+footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 50px; border-top: 1px solid var(--border); padding-top: 24px;}
 
 /* responsive */
+@media (max-width: 900px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 760px) {
   .form-grid, .breakdown, .grid-2 { grid-template-columns: 1fr; }
   .hero { grid-template-columns: 1fr; text-align: center; }
   .verdict .meta { justify-content: center; }
+}
+@media (max-width: 500px) {
+  .team-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -378,6 +418,51 @@ footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 4
 
     <div class="actions">
       <button class="ghost-btn" id="reset-btn">↻ Run another analysis</button>
+    </div>
+  </div>
+
+  <!-- ===================== Team Section ===================== -->
+  <div class="team-section">
+    <h2 class="team-title">Team & Execution Capability</h2>
+    <div class="team-grid">
+      
+      <div class="team-card">
+        <div class="avatar">AI</div>
+        <h3>Ahmer Ijaz</h3>
+        <div class="role">Team Lead & Backend</div>
+        <ul>
+          <li>Architected Python/FastAPI backend & Gemini multi-agent pipeline.</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar">TN</div>
+        <h3>Taha Nadeem</h3>
+        <div class="role">Frontend</div>
+        <ul>
+          <li>Built responsive UI for interactive career roadmaps.</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar">WI</div>
+        <h3>Waqar Imran</h3>
+        <div class="role">Project Manager</div>
+        <ul>
+          <li>Coordinated team deliverables & pitch prep.</li>
+        </ul>
+      </div>
+
+      <div class="team-card">
+        <div class="avatar">AA</div>
+        <h3>Ahad Ata</h3>
+        <div class="role">QA Tester</div>
+        <ul>
+          <li>Alibaba Cloud ACK Deployment.</li>
+          <li>Docker Microservice Containerization.</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 
